@@ -88,7 +88,7 @@ forBlock['Promp'] = function(
   const value_list = generator.valueToCode(block, 'list', Order.ATOMIC);
 
   const code = `Promp(${value_message}${value_list ? `, ${value_list}` : ""}${ value_list ? `, Type=${dropdown_type}` : `, ${dropdown_type}`})\n`;
-  return code;
+  return [code, Order.NONE];
 }
 
 forBlock['setLink'] = function(
@@ -131,17 +131,16 @@ forBlock['getTM'] = function(
   block: Blockly.Block,
   generator: Blockly.CodeGenerator
 ) {
-  const value_tmparameter = generator.valueToCode(block, 'tmParameter', Order.ATOMIC) || "'TM Parameter'";
+  const value_tmparameter = generator.valueToCode(block, 'tmParameter', Order.ATOMIC) || "'Parameter'";
 
   const dropdown_wait = block.getFieldValue('wait');
 
-  const value_timeout = generator.valueToCode(block, 'timeout', Order.ATOMIC);
-
+  const number_timeout = block.getFieldValue('timeout');
   const dropdown_valueformat = block.getFieldValue('valueFormat');
   const dropdown_extended = block.getFieldValue('extended');
 
   const code = `GetTM(${value_tmparameter}${dropdown_wait !== "---" ? `, Wait = ${dropdown_wait}` : ""}`+
-                    `${value_timeout ? `, Timeout = ${value_timeout}` : ""}${dropdown_valueformat !== "---" ? `, ValueFormat = ${dropdown_valueformat}` : ""}`+
+                    `${number_timeout > 0 ? `, Timeout = ${number_timeout}` : ""}${dropdown_valueformat !== "---" ? `, ValueFormat = ${dropdown_valueformat}` : ""}`+
                     `${dropdown_extended !== "---" ? `, Extended = ${dropdown_extended}` : ""})\n`;
   return code;
 }

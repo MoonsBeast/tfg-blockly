@@ -7,8 +7,8 @@ import * as Blockly from 'blockly/core';
  * and you only work with one object on index.ts. This might be a bad decision but is the 
  * one I took.
  * 
- * For the rest i tried to make representative names so that they can be easily found on
- * a search. I recomend the use o the block factory refered on the README for further delopment.
+ * For the rest I tried to make representative names so that they can be easily found on
+ * a search. I recommend the use o the block factory refered on the README for further delopment.
  */
 
 const step = {
@@ -267,9 +267,11 @@ const getTM = {
       "name": "NAME"
     },
     {
-      "type": "input_value",
+      "type": "field_number",
       "name": "timeout",
-      "check": "Number"
+      "value": 0,
+      "min": 0,
+      "precision": 1
     },
     {
       "type": "field_dropdown",
@@ -299,7 +301,7 @@ const getTM = {
         ],
         [
           "False",
-          "FALSE"
+          "False"
         ]
       ]
     },

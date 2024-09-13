@@ -497,7 +497,7 @@ export const toolbox = {
             },
           },
         },
-        {
+        /*{
           'kind': 'block',
           'type': 'add_text',
           'inputs': {
@@ -518,7 +518,7 @@ export const toolbox = {
               },
             },
           },
-        },
+        },*/
       ],
     },
     {
