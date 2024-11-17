@@ -380,7 +380,7 @@ forBlock['send'] = function(
   options.filter(elem => elem !== "").forEach(elem => res += (elem+", "))
   res = res.substring(0,res.lastIndexOf(", "));
 
-  const code = `Send(${res})`;
+  const code = `Send(${res})\n`;
   return code;
 }
 

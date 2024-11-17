@@ -986,7 +986,7 @@ const argument = {
   "type": "commandArg",
   "tooltip": "",
   "helpUrl": "",
-  "message0": "Argument - Name: %1 Value: %2 Value Format: %3 %4 Radix: %5 %6",
+  "message0": "%1Argument - Name:  Value: %2 Value Format: %3 %4 Radix: %5 %6",
   "args0": [
     {
       "type": "input_value",
